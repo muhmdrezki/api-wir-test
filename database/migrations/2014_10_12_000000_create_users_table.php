@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('no_telp')->unique();
+            $table->string('alamat');
             $table->timestamps();
         });
     }

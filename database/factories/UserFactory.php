@@ -21,5 +21,6 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'nama' => $faker->name,
         'no_telp' => $faker->unique()->phoneNumber,
+        'alamat' => $faker->address
     ];
 });
