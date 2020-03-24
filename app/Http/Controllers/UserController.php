@@ -12,7 +12,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        if(isset($_GET['search'])) {
+            $users = User::where('nama', 'like', $_GET['search'])->get();
+        } else {
+            $users = User::all();
+        }
         return response()->json([
             'status' => true,
             'data' => $users
